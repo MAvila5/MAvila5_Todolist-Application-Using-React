@@ -1,12 +1,29 @@
+body {
+    background-color: lightgray;
+}
 
-/* 
+form {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    border: 2px solid royalblue;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.todo-item {
+    margin-top: 10px;
+}
 
-*/
+.todo-text {
+    margin-right: 15px;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+.todo-item input:checked~.todo-text {
+    text-decoration: line-through;
+}
+
+.btn-danger {
+    margin-left: auto;
+}
