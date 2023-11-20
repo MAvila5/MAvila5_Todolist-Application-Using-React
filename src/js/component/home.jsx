@@ -64,6 +64,10 @@ function Home() {
 		setTodos(updatedTodos);
 	};
 
+	// Funcation to list the number of assignments left
+	const assignmentsLeft = todos.filter((todo) => !todo.is_done).length;
+
+
 	return (
 		<form className="container d-flex flex-column align-items-center position-absolute top-50 start-50 translate-middle">
 			{/* Application title */}
@@ -94,8 +98,17 @@ function Home() {
 					delete_todo={() => deleteTodo(index)}
 				/>
 			))}
+
+			{/* Alert that displays the number of assignments left */}
+			{assignmentsLeft > 0 && (
+				<div className="mt-3 text-danger">
+					Assignments remaining: {assignmentsLeft}!
+				</div>
+			)}
+
 		</form>
 	);
 }
+
 
 export default Home;
